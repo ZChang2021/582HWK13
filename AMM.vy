@@ -39,12 +39,12 @@ def tradeTokens(sell_token: address, sell_quantity: uint256):
     #Your code here
     if (sell_token == self.tokenA.address):
         self.tokenB.transfer(msg.sender, sell_quantity)
-        self.tokenA.transferfrom(msg.sender, self, sell_quantity)
+        self.tokenA.transferFrom(msg.sender, self, sell_quantity)
         self.tokenBQty -= sell_quantity
         self.tokenAQty += sell_quantity
     else:
         self.tokenA.transfer(msg.sender, sell_quantity)
-        self.tokenB.transferfrom(msg.sender, self, sell_quantity)
+        self.tokenB.transferFrom(msg.sender, self, sell_quantity)
         self.tokenAQty -= sell_quantity
         self.tokenBQty += sell_quantity
 
